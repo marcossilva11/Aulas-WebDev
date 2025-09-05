@@ -1,11 +1,13 @@
 import Sidebar from "../components/Sidebar";
 import Dashboard from "./Dashboard";
+import logo from "../assets/logo.png"
 
 export default function AdminLayout() {
   return (
     <div className="flex">
       <Sidebar />
       <div className="flex-1 bg-gray-100 min-h-screen p-6">
+        <img src={logo} alt="Logo" />
         <Dashboard/>
       </div>
     </div>

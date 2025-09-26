@@ -6,16 +6,14 @@ export default function PostsUsuario() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts?userID=${parametros.id}`)
+    fetch(`https://jsonplaceholder.typicode.com/posts?userId=${parametros.id}`)
       .then((res) => res.json())
       .then((data) => setPosts(data));
-  }, []);
-  return (
-    posts.map(post => {
-        <div>
-            <div>{post.title}</div>
-            <p>{post.title}</p>
-        </div>
-    })
-  )
+  }, [parametros]);
+  return posts.map((post) => {
+    <div>
+      <p>{post.title}</p>
+      <p>{post.title}</p>
+    </div>;
+  });
 }
